@@ -8,11 +8,11 @@ def eval_forth(file):
         word = str.split(line)
         print word[0]
         if word[0] == 'add':
-            if (isinstance(stack[0], int)) is True and (isinstance(stack[1], int)) is True:
+            if (isinstance(int(stack[0]), int)) is True and (isinstance(int(stack[1]), int)) is True:
             #if stack[0] == int and stack[1] == int:
                 stack.append(stack.pop(0)+stack.pop(1))
         elif word[0] == 'put':
-            if (isinstance(word[1], int)) is True:
+            if (isinstance(int(word[1]), int)) is True:
             #if word[1] == int:
                 stack.append(word[1])
             elif (isinstance(word[1], str)) is True:
@@ -25,7 +25,7 @@ def eval_forth(file):
         elif word[0] == 'print':
             print stack[0]
         elif word[0] == 'sub':
-            if (isinstance(stack[0], int)) is True and (isinstance(stack[1], int)) is True:
+            if (isinstance(int(stack[0]), int)) is True and (isinstance(int(stack[1]), int)) is True:
             #if stack[0] == int and stack[1] == int:
                 stack.append(stack.pop(0)-stack.pop(1))
         elif word[0][0] == '#':
