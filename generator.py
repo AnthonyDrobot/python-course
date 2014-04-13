@@ -28,19 +28,23 @@ def drop_empty(gen):
 
 def get_ints(gen):
     for line in gen:
-        if line == int:
+        if isinstance(line, int):
+        #if line == int:
             yield line
 
 def my_sum(gen):
     for line in gen:
-        if line == int:
+        if isinstance(line, int):
+        #if line == int:
             yield result + line
 
 def split_items(gen):
     for line in gen:
-        if line == int:
+        if isinstance(line, int):
+        #if line == int:
             yield int(line)
-        elif line == float:
+        if isinstance(line, float):
+        #elif line == float:
             yield float(line)
         else:
             yield line
