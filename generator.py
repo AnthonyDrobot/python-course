@@ -2,7 +2,8 @@ import sys
 
 result = 0
 si = ''
-fd = "1 2 3 3.45 abra_cadabra \n \n12"
+fd = open(sys.argv[0])
+#fd = ("1 2 3 3.45 abra_cadabra \n \n12")
 
 def iter_lines(fd):
     ch = fd.read(1)
