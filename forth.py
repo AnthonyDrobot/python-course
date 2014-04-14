@@ -6,11 +6,14 @@ def eval_forth(file):
     ch = fl.readlines()
     for line in ch:
         word = str.split(line)
-        print word[0]
         if word[0] == 'add':
-            if (isinstance(int(stack[0]), int)) is True and (isinstance(int(stack[1]), int)) is True:
-            #if stack[0] == int and stack[1] == int:
-                stack.append(stack.pop(0)+stack.pop(1))
+            try:
+                while stack[1]:
+                    if (isinstance(int(stack[0]), int)) is True and (isinstance(int(stack[1]), int)) is True:
+                        #if stack[0] == int and stack[1] == int:
+                        stack.append(int(stack.pop(0))+int(stack.pop(0)))
+            except:
+                pass
         elif word[0] == 'put':
             if (isinstance(int(word[1]), int)) is True:
             #if word[1] == int:
@@ -25,9 +28,13 @@ def eval_forth(file):
         elif word[0] == 'print':
             print stack[0]
         elif word[0] == 'sub':
-            if (isinstance(int(stack[0]), int)) is True and (isinstance(int(stack[1]), int)) is True:
-            #if stack[0] == int and stack[1] == int:
-                stack.append(stack.pop(0)-stack.pop(1))
+            try:
+                while stack[1]:
+                    if (isinstance(int(stack[0]), int)) is True and (isinstance(int(stack[1]), int)) is True:
+                        #if stack[0] == int and stack[1] == int:
+                        stack.append(int(stack.pop(0))-int(stack.pop(0)))
+            except:
+                pass
         elif word[0][0] == '#':
             pass
         else:
