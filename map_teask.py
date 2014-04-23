@@ -9,10 +9,10 @@ def map_yield(func, dat):
         yield func(each)
         map_yield(func, each)
 
-dat1 = [set([1, 2]), [3], 4, [5, {6:4}, [7, 8]]]
-dat2 = [1, 2, 3, 4, 5, 6, 7, 8]
+
+dat = [1, 2, 3, 4, 5, 6, 7, 8]
 
 
-print map_rq(lambda x: x*2, dat1)
-print map_yield(lambda x: x*2, dat2)
+print map_rq(lambda x: x*2, dat)
+print map_yield(lambda x: x*2, dat)
 
